@@ -8,10 +8,9 @@ lazy val qlexpress = (project in file("."))
   .aggregate(
     qlexpress3Demo.jvm,
     qlexpress3Demo.js,
-    qlexpress3Demo.native,
   )
 
-lazy val qlexpress3Demo = (crossProject(JVMPlatform, JSPlatform, NativePlatform) in file("qlexpress3-demo"))
+lazy val qlexpress3Demo = (crossProject(JVMPlatform, JSPlatform) in file("qlexpress3-demo"))
   .settings(name := "qlexpress3-demo")
   .settings(crossTestDependencies(
     peknight.validation,
